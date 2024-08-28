@@ -1,105 +1,89 @@
 
-# To-Do List Application - Version 2
+# To-Do List Application v2.0
 
-## Introduction
-This is the second version of a command-line To-Do List application. It allows users to manage their tasks by adding, deleting, completing, and prioritizing tasks. The application also supports saving and loading tasks to and from a text file.
+## Overview
+This is the second version of a console-based To-Do List application written in Python. It allows users to manage their tasks with features like prioritization, scheduling, and completion tracking. The application stores tasks in a text file and offers options to import/export tasks, switch between different task modes, and save the task list.
 
 ## Features
-- **Task Prioritization:** Tasks can be categorized as High, Medium, or Low priority.
-- **Task Sorting:** Tasks are automatically sorted based on priority and time.
-- **Task Completion:** Tasks can be marked as completed.
-- **Task File Management:** Import and export tasks to different files.
-- **Color-coded Output:** Priority levels and completed tasks are color-coded for better readability.
+- **Task Prioritization**: Categorize tasks into High, Medium, and Low priority levels.
+- **Time-Based Sorting**: Sort tasks based on the scheduled time or deadline.
+- **Task Completion**: Mark tasks as completed with a visual indicator.
+- **File Management**: Import tasks from and export tasks to different text files.
+- **Multiple Modes**: Switch between different task modes (e.g., schedule and to-do list).
+- **Visual Feedback**: Colored output for better readability and user interaction.
+
+## Installation
+1. Ensure Python 3.x is installed on your system.
+2. Install the required Python packages using pip:
+   ```
+   pip install termcolor
+   ```
+3. Download or clone this repository to your local machine.
 
 ## Usage
+1. Navigate to the directory where the script is located.
+2. Run the application using the following command:
+   ```
+   python todo_list_v2.py
+   ```
+3. Follow the on-screen instructions to add, delete, complete tasks, and more.
 
-### Adding a Task
-To add a task, simply type the task details in the format:
+## Commands
+- **Add a Task**: To add a new task, simply type the task description followed by the time (if any). For example:
+  ```
+  High: Buy groceries 15:00
+  ```
+- **Delete a Task**: To delete a task, use the command:
+  ```
+  delete [task_index]
+  ```
+  or
+  ```
+  del [task_index]
+  ```
+- **Complete a Task**: To mark a task as completed, use:
+  ```
+  complete [task_index]
+  ```
+- **Switch Modes**: To switch between schedule and to-do list modes:
+  ```
+  mode schedule
+  ```
+  ```
+  mode todo-list
+  ```
+- **Import/Export Tasks**: To import tasks from a file or export tasks to a file:
+  ```
+  import [filename]
+  ```
+  ```
+  export [filename]
+  ```
+- **Save Tasks**: To save the current list of tasks:
+  ```
+  save
+  ```
+- **Clear All Tasks**: To remove all tasks from the list:
+  ```
+  clear
+  ```
+- **Exit**: To exit the application:
+  ```
+  exit
+  ```
 
-```
-<Priority>: <Task Description> <Time (Optional)>
-```
+## File Structure
+- **data.txt**: Default file where tasks are stored.
+- **schedule.txt**: Alternate file used when switching to schedule mode.
 
-Example:
-```
-High: Finish homework 18:00
-```
+## Updates in v2.0
+- Improved task sorting logic based on priority, time, and completion status.
+- Enhanced visual feedback with colored outputs.
+- Added multiple modes for better task management.
+- Optimized task formatting and display.
 
-### Completing a Task
-To mark a task as completed, type:
+## Contributing
+If you have suggestions for improvements or find any issues, feel free to submit a pull request or open an issue on GitHub.
 
-```
-complete <task number>
-```
-
-Example:
-```
-complete 1
-```
-
-### Deleting a Task
-To delete a task, type:
-
-```
-delete <task number>
-```
-
-Example:
-```
-delete 2
-```
-
-### Changing Modes
-Switch between different modes (files) with:
-
-```
-mode <schedule/todo-list>
-```
-
-Example:
-```
-mode schedule
-```
-
-### Saving Tasks
-To save the current list of tasks to the file, type:
-
-```
-save
-```
-
-### Exiting the Program
-To exit the program, type:
-
-```
-exit
-```
-
-## Files
-- **data.txt**: The default file where tasks are stored.
-- **schedule.txt**: An alternative file for storing tasks.
-
-## Requirements
-- Python 3.x
-- `termcolor` module
-
-You can install the required module using pip:
-
-```
-pip install termcolor
-```
-
-## Running the Application
-To run the application, execute the script:
-
-```
-python todo_list.py
-```
-
-## Notes
-- Ensure that the terminal is set to UTF-8 encoding for proper display of colored text.
-- The application adjusts the console window size automatically for optimal display.
-
-## Version History
-- **Version 1:** Initial release with basic task management features.
-- **Version 2:** Added task prioritization, sorting by time, and improved task completion logic.
+## License
+This project is licensed under the MIT License.

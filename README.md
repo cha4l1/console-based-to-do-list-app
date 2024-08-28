@@ -1,57 +1,105 @@
 
-# To-Do List Application
+# To-Do List Application - Version 2
 
-This is a simple command-line To-Do List application that helps you manage your tasks effectively. It allows you to add, complete, and delete tasks, providing a straightforward and user-friendly experience.
+## Introduction
+This is the second version of a command-line To-Do List application. It allows users to manage their tasks by adding, deleting, completing, and prioritizing tasks. The application also supports saving and loading tasks to and from a text file.
 
 ## Features
-
-- **Add Tasks:** Simply type your task to add it to the list.
-- **Delete Tasks:** Use the `delete` command followed by the task number to remove it.
-- **Complete Tasks:** Use the `complete` command followed by the task number to mark it as completed. Completed tasks will be shown in green with a checkmark (√).
-- **Persistent Storage:** All tasks are saved to a file (`data.txt`) and loaded each time the application starts.
+- **Task Prioritization:** Tasks can be categorized as High, Medium, or Low priority.
+- **Task Sorting:** Tasks are automatically sorted based on priority and time.
+- **Task Completion:** Tasks can be marked as completed.
+- **Task File Management:** Import and export tasks to different files.
+- **Color-coded Output:** Priority levels and completed tasks are color-coded for better readability.
 
 ## Usage
 
-### Running the Application
+### Adding a Task
+To add a task, simply type the task details in the format:
 
-1. Make sure you have Python installed on your machine.
-2. Install the required package by running:  
-   ```
-   pip install termcolor
-   ```
-3. Run the application with:
-   ```
-   python main.py
-   ```
+```
+<Priority>: <Task Description> <Time (Optional)>
+```
 
-### Commands
+Example:
+```
+High: Finish homework 18:00
+```
 
-- **Add a Task:** Just type the task and press Enter.  
-  Example:  
-  ```
-  Buy groceries
-  ```
+### Completing a Task
+To mark a task as completed, type:
 
-- **Complete a Task:**  
-  ```
-  complete 1
-  ```
+```
+complete <task number>
+```
 
-- **Delete a Task:**  
-  ```
-  delete 1
-  ```
+Example:
+```
+complete 1
+```
 
-- **Exit the Application:**  
-  ```
-  exit
-  ```
+### Deleting a Task
+To delete a task, type:
+
+```
+delete <task number>
+```
+
+Example:
+```
+delete 2
+```
+
+### Changing Modes
+Switch between different modes (files) with:
+
+```
+mode <schedule/todo-list>
+```
+
+Example:
+```
+mode schedule
+```
+
+### Saving Tasks
+To save the current list of tasks to the file, type:
+
+```
+save
+```
+
+### Exiting the Program
+To exit the program, type:
+
+```
+exit
+```
+
+## Files
+- **data.txt**: The default file where tasks are stored.
+- **schedule.txt**: An alternative file for storing tasks.
+
+## Requirements
+- Python 3.x
+- `termcolor` module
+
+You can install the required module using pip:
+
+```
+pip install termcolor
+```
+
+## Running the Application
+To run the application, execute the script:
+
+```
+python todo_list.py
+```
 
 ## Notes
+- Ensure that the terminal is set to UTF-8 encoding for proper display of colored text.
+- The application adjusts the console window size automatically for optimal display.
 
-- The application handles errors such as entering an invalid task number by displaying an appropriate error message.
-- The tasks are saved in a text file (`data.txt`) in the application's directory. Ensure this file is in the correct location when running the script.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+## Version History
+- **Version 1:** Initial release with basic task management features.
+- **Version 2:** Added task prioritization, sorting by time, and improved task completion logic.
